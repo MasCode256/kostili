@@ -15,10 +15,13 @@ namespace kostili
 {
 	namespace vexors
 	{
+		// "Вексор" - строка, которая может быть закодирована и декодирована в линейный вектор подстрок в формате длина_подстроки:подстрока.
+		//
+		// Полезно при работе с бинарной информацией, где нужна экономия памяти, но бессмысленно во всех остальных случаях
 		class vexor
 		{
 		public:
-			// vexor в формате строки
+			// vexor в формате строки (не функция)
 			wstring str = L"";
 
 			// Конструктор, принимающий начальный вектор, который будет записан в vexor
@@ -79,6 +82,20 @@ namespace kostili
 			}
 		};
 	}
+}
+
+// Перегрузка оператора << для класса vexor и std::wostream
+std::wostream &operator<<(std::wostream &os, const kostili::vexors::vexor &obj)
+{
+	os << obj.str;
+	return os;
+}
+
+// Перегрузка оператора << для класса vexor и std::wostream
+std::ostream &operator<<(std::ostream &os, const kostili::vexors::vexor &obj)
+{
+	os << obj.str.c_str();
+	return os;
 }
 
 #endif

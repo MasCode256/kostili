@@ -1,6 +1,10 @@
 #ifndef LANG_SWITCHER_H
 #define LANG_SWITCHER_H
 
+#define ENGLISH 0
+#define RUSSIAN 1
+#define BELARUSIAN 2
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -47,7 +51,7 @@ namespace kostili
 				}
 				else
 				{
-					wcout << L"Ошибка при выводе текста: индекс вне диапозона. (размер вектора: " << v.size() << L", индекс: " << index << ").";
+					wcerr << L"Ошибка при выводе текста: индекс вне диапозона. (размер вектора: " << v.size() << L", индекс: " << index << ").";
 				}
 			}
 
@@ -63,7 +67,7 @@ namespace kostili
 				}
 				else
 				{
-					wcout << L"Ошибка при выводе текста: индекс вне диапозона. (размер вектора: " << v.size() << L", индекс: " << index << ").";
+					wcerr << L"Ошибка при выводе текста: индекс вне диапозона. (размер вектора: " << v.size() << L", индекс: " << index << ").";
 				}
 			}
 		};

@@ -8,8 +8,10 @@ using namespace std;
 
 namespace kostili
 {
+	// Всякая парсерная дичь, без которой нельзя жить
 	namespace parser
 	{
+		// Например, "Илья, косарь, крять" вернет "Илья"
 		std::wstring get_substring_before_delimiter(const std::wstring &str, wchar_t delimiter)
 		{
 			// Находим позицию первого вхождения разделителя
@@ -25,6 +27,7 @@ namespace kostili
 			return str.substr(0, pos);
 		}
 
+		// L"3" в 3 (спасибо, кэп)
 		size_t str_to_num(const wstring &str)
 		{
 			size_t ret;
@@ -34,6 +37,7 @@ namespace kostili
 			return ret;
 		}
 
+		// 3 в L"3" (неожиданно)
 		const wstring num_to_str(size_t num)
 		{
 			wstring ret;

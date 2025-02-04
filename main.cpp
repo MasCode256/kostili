@@ -4,15 +4,14 @@ int main()
 {
 	std::setlocale(LC_ALL, "");
 
-	kostili::lang_switcher::wstream log(1);
+	kostili::lang_switcher::wstream log(RUSSIAN);
 	log.println(vector<wstring>{L"Creating and encoding vexor...", L"Создание вексора..."});
 
 	kostili::vexors::vexor vex(vector<wstring>{L"Привет, ", L"мир!"});
 	vex.append(L"Всё работает!");
 	vector<wstring> decoded = vex.vec();
 
-	log.print(vector<wstring>{L"vex = " + vex.str});
-	log.println(vector<wstring>{L". Decoding...", L". Декодирование..."});
+	wcout << vex << endl;
 
 	for (int i = 0; i < decoded.size() - 1; i++)
 	{
